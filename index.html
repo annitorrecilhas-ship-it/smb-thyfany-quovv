@@ -1,0 +1,160 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>SMB · Thyfany</title><link rel="stylesheet" href="https://annitorrecilhas-ship-it.github.io/dash-smb/app.css?v=e63cd5055d"></head><body>
+<header class="report-header">
+<div class="deco-ring"></div>
+<div class="header-top">
+<div>
+<p class="eyebrow">Ongoing SMB · Customer Experience</p>
+<h1>Olá, Thyfany! Este é o seu painel de indicadores (KPIs)</h1>
+<div class="update-badge"><span class="dot-live"></span>Última atualização: <strong>30/09/2026 às 21h30</strong><span class="sep"> · </span>Próxima atualização: <strong>02/10/2026 às 09h00</strong></div>
+</div>
+<span id="logo-slot"></span>
+</div>
+</header>
+<main>
+<section class="block highlight">
+<div class="block-title"><span class="dot"></span>Agendamento — seu destaque<span class="tag">Seu desempenho</span></div>
+<div id="own-wrap">
+<div class="dash-card" style="padding-bottom:0;">
+<div class="dash-legend" id="leg-own"></div>
+</div>
+<div class="split-2">
+<div class="dash-card">
+<div class="dash-card-title">Tickets agendados — mensal (desde <span id="lbl-first-month"></span>)</div>
+<div class="dash-canvas-wrap"><canvas id="c-own-mensal"></canvas></div>
+</div>
+<div class="dash-card">
+<div class="dash-card-title">Tickets agendados — últimas 3 semanas</div>
+<div class="dash-canvas-wrap"><canvas id="c-own-semanal"></canvas></div>
+</div>
+</div>
+<div class="split-2" style="border-top: 1px solid var(--border);">
+<div class="dash-card">
+<div class="block-note" style="padding:0;" id="note-part-m"></div>
+</div>
+<div class="dash-card">
+<div class="block-note" style="padding:0;" id="note-part-s"></div>
+</div>
+</div>
+<div class="dash-card" style="border-top: 1px solid var(--border); padding-bottom:0;">
+<div class="dash-card-title with-toggle">
+<span>Potencial &amp; Dias para agendar</span>
+<div class="view-toggle" id="potdias-toggle">
+<button type="button" class="active" data-view="mensal">Mensal</button>
+<button type="button" data-view="semanal">Semanal</button>
+</div>
+</div>
+</div>
+<div class="split-2">
+<div class="dash-card">
+<div class="dash-card-title">Potencial — Instalação (seus dispositivos)</div>
+<div class="dash-legend" id="leg-potreal"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-potreal"></canvas></div>
+</div>
+<div class="dash-card">
+<div class="dash-card-title">Dias para agendar</div>
+<div class="dash-legend" id="leg-dias"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-dias"></canvas></div>
+</div>
+</div>
+<div class="split-2" style="border-top: 1px solid var(--border);">
+<div class="dash-card" style="flex: 2.6;">
+<div class="dash-card-title">SLA Agendamento — Recebido x Realizado</div>
+<div class="dash-legend" id="leg-recrel-own"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-recrel-own"></canvas></div>
+</div>
+<div class="dash-card" style="flex: 0 0 190px;">
+<div class="dash-card-title">Tickets pendente de agendamento</div>
+<div class="stat-row">
+<div class="stat-card">
+<div class="stat-num" id="stat-backlog">—</div>
+<div class="stat-lbl">tickets no seu nome, parados em "Agendar instalação"</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="dash-card" id="own-empty" hidden>
+<div class="pending-note"><strong>Você ainda não tem tickets atribuídos neste período.</strong> Assim que os primeiros tickets de agendamento chegarem no seu nome, seus números aparecem aqui automaticamente. Enquanto isso, acompanhe a equipe na visão geral abaixo.</div>
+</div>
+</section>
+<section class="block">
+<div class="block-title">
+<span class="dot"></span>Atendimento — individual (Intercom)<span class="tag">Seu desempenho</span>
+<div class="view-toggle" id="ind-atend-toggle">
+<button type="button" class="active" data-view="diario">Diário</button>
+<button type="button" data-view="semanal">Semanal</button>
+<button type="button" data-view="mensal">Mensal</button>
+</div>
+</div>
+<div id="ind-atend-wrap">
+<div class="split-2">
+<div class="dash-card">
+<div class="dash-card-title">SLA 1ª Resposta (%)</div>
+<div class="dash-legend" id="leg-ind-sla1"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-ind-sla1"></canvas></div>
+</div>
+<div class="dash-card">
+<div class="dash-card-title">TME — mediana</div>
+<div class="dash-legend" id="leg-ind-tme"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-ind-tme"></canvas></div>
+</div>
+</div>
+<div class="split-2" style="border-top: 1px solid var(--border);">
+<div class="dash-card">
+<div class="dash-card-title">CSAT (%)</div>
+<div class="dash-legend" id="leg-ind-csat"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-ind-csat"></canvas></div>
+</div>
+<div class="dash-card">
+<div class="dash-card-title">TMA — mediana</div>
+<div class="dash-legend" id="leg-ind-tma"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-ind-tma"></canvas></div>
+</div>
+</div>
+</div>
+</section>
+<section class="block">
+<div class="block-title">
+<span class="dot"></span>Atendimento — geral (equipe)<span class="tag pend">Equipe · chat/WhatsApp</span>
+<div class="view-toggle" id="atend-toggle">
+<button type="button" class="active" data-view="mensal">Mensal</button>
+<button type="button" data-view="semanal">Semanal</button>
+</div>
+</div>
+<div id="atend-wrap">
+<div class="split-2">
+<div class="dash-card">
+<div class="dash-card-title">CSAT, SLA 1ª Resposta e SLA Resp. Subsequentes (%)</div>
+<div class="dash-legend" id="leg-atend-pct"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-atend-pct"></canvas></div>
+</div>
+<div class="dash-card" style="display:flex; flex-direction:column;">
+<div class="dash-card-title">TME e TMA</div>
+<div class="dash-legend" id="leg-tma"></div>
+<div class="dash-canvas-wrap" style="height:140px; flex-shrink:0;"><canvas id="c-tma"></canvas></div>
+<div class="dash-legend" id="leg-tme" style="margin-top:6px;"></div>
+<div class="dash-canvas-wrap" style="height:140px; flex-shrink:0;"><canvas id="c-tme"></canvas></div>
+</div>
+</div>
+</div>
+</section>
+<section class="block">
+<div class="block-title"><span class="dot"></span>Visão geral da operação<span class="tag pend">Não é sua diretamente, mas dá contexto</span></div>
+<div class="split-2">
+<div class="dash-card">
+<div class="dash-card-title">Agendamento — equipe SMB (tickets, potencial e dias médios)</div>
+<div class="dash-legend" id="leg-agend-geral"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-agend-geral"></canvas></div>
+</div>
+<div class="dash-card">
+<div class="dash-card-title">SLA Agendamento — Recebido x Realizado (etapa toda)</div>
+<div class="dash-legend" id="leg-recrel"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-recrel"></canvas></div>
+</div>
+</div>
+</section>
+</main>
+
+<script>/*__DATA_BEGIN__*/var D={"role":"agendamento","name":"Thyfany Correia","first":"Thyfany","labelsM":["Jun/26","Jul/26","Ago/26","Set/26*"],"labelsS":["S-3","S-2","S-1"],"weekRanges":["S-3 07/09–13/09","S-2 14/09–20/09","S-1 21/09–27/09"],"team":{"ticketsM":[263,340,408,478],"ticketsS":[80,109,119],"potM":[535,648,673,794],"potS":[111,191,168],"realM":[230,313,374,448],"recM":[354,525,515,504],"diasM":[12.1,11.4,13.5,13],"diasS":[18.1,11.2,10.3]},"atend":null,"own":{"ticketsM":[1,53,123,145],"ticketsS":[26,34,30],"potM":[5,80,159,258],"potS":[29,76,39],"realM":[1,51,111,137],"recM":[26,118,142,152],"diasM":[2.8,8.4,10,12.8],"diasS":[9.3,8.7,10.7],"backlog":147,"hasData":true},"atendInd":null};/*__DATA_END__*/</script>
+<script src="https://annitorrecilhas-ship-it.github.io/dash-smb/app.js?v=f062041580"></script>
+</body></html>
