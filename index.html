@@ -41,10 +41,11 @@
 </div>
 <div class="dash-card" style="border-top: 1px solid var(--border); padding-bottom:0;">
 <div class="dash-card-title with-toggle">
-<span>Veículos agendados (meta) &amp; Dias para agendar</span>
+<span>Veículos agendados x meta &amp; Dias para agendar</span>
 <div class="view-toggle" id="potdias-toggle">
 <button type="button" data-view="mensal">Mensal</button>
 <button type="button" class="active" data-view="semanal">Semanal</button>
+<button type="button" data-view="diario">Diário</button>
 </div>
 </div>
 </div>
@@ -82,6 +83,45 @@
 </div>
 </section>
 <section class="block">
+<div class="block-title">
+<span class="dot"></span>Atendimento — seu desempenho<span class="tag">Intercom · chat/WhatsApp</span>
+<div class="view-toggle" id="atend-toggle">
+<button type="button" class="active" data-view="mensal">Mensal</button>
+<button type="button" data-view="semanal">Semanal</button>
+<button type="button" data-view="diario">Diário</button>
+</div>
+</div>
+<div id="atend-wrap">
+<div class="split-2">
+<div class="dash-card">
+<div class="dash-card-title">CSAT</div>
+<div class="dash-legend" id="leg-atend-csat"></div>
+<div class="dash-canvas-wrap"><canvas id="c-atend-csat"></canvas></div>
+</div>
+<div class="dash-card">
+<div class="dash-card-title">Conversas fechadas</div>
+<div class="dash-legend" id="leg-atend-conv"></div>
+<div class="dash-canvas-wrap"><canvas id="c-atend-conv"></canvas></div>
+</div>
+</div>
+<div class="split-2" style="border-top: 1px solid var(--border);">
+<div class="dash-card">
+<div class="dash-card-title">TME — tempo da 1ª resposta (mediana)</div>
+<div class="dash-legend" id="leg-atend-tme"></div>
+<div class="dash-canvas-wrap"><canvas id="c-atend-tme"></canvas></div>
+</div>
+<div class="dash-card">
+<div class="dash-card-title">TMA — tempo até o 1º fechamento (mediana)</div>
+<div class="dash-legend" id="leg-atend-tma"></div>
+<div class="dash-canvas-wrap"><canvas id="c-atend-tma"></canvas></div>
+</div>
+</div>
+<div class="dash-card" style="border-top: 1px solid var(--border);">
+<div class="block-note" style="padding:0;" id="note-atend"></div>
+</div>
+</div>
+</section>
+<section class="block">
 <div class="block-title"><span class="dot"></span>Visão geral da operação<span class="tag pend">Não é sua diretamente, mas dá contexto</span></div>
 <div class="split-2">
 <div class="dash-card">
@@ -98,7 +138,7 @@
 </section>
 </main>
 
-<script>/*__DATA_BEGIN__*/var D={"role":"agendamento","name":"Thyfany Correia","first":"Thyfany","labelsM":["Jul/26","Ago/26","Set/26","Out/26*"],"labelsS":["S-3","S-2","S-1"],"weekRanges":["S-3 14/09–20/09","S-2 21/09–27/09","S-1 28/09–04/10"],"team":{"ticketsM":[340,408,478,39],"ticketsS":[109,119,124],"potM":[648,673,794,49],"potS":[191,168,242],"realM":[313,374,448,37],"recM":[516,512,506,85],"diasM":[11.4,13.5,13,9.1],"diasS":[11.2,10.3,12.5]},"own":{"ticketsM":[53,123,145,10],"ticketsS":[34,30,36],"potM":[80,159,258,11],"potS":[76,39,88],"realM":[51,111,137,9],"recM":[114,141,153,25],"diasM":[8.4,10,12.8,4.5],"diasS":[8.7,10.7,9.9],"backlog":162,"hasData":true,"metaS":[60,60,60],"metaM":[276,252,264,36]},"metaSemanal":60,"corte":"05/10"};/*__DATA_END__*/</script>
+<script>/*__DATA_BEGIN__*/var D={"role":"agendamento","name":"Thyfany Correia","first":"Thyfany","labelsM":["Jul/26","Ago/26","Set/26","Out/26*"],"labelsS":["S-3","S-2","S-1"],"labelsDias":["21/09","22/09","23/09","24/09","25/09","28/09","29/09","30/09","01/10","02/10"],"weekRanges":["S-3 14/09–20/09","S-2 21/09–27/09","S-1 28/09–04/10"],"team":{"ticketsM":[340,408,478,39],"ticketsS":[109,119,124],"ticketsD":[19,25,25,32,18,29,27,32,18,18],"potM":[648,673,794,49],"potS":[191,168,242],"potD":[25,39,32,39,33,69,31,97,28,17],"realM":[313,374,448,37],"recM":[516,512,506,85],"diasM":[11.4,13.5,13,9.1],"diasS":[11.2,10.3,12.5],"diasD":[7.1,9.2,13.2,12.6,7.5,11.9,17.7,11.8,13.4,6.2]},"own":{"ticketsM":[53,123,145,10],"ticketsS":[34,30,36],"ticketsD":[6,11,4,7,2,6,8,12,5,5],"potM":[80,159,258,11],"potS":[76,39,88],"potD":[9,11,7,10,2,18,8,51,7,4],"realM":[51,111,137,9],"recM":[114,141,153,25],"diasM":[8.4,10,12.8,4.5],"diasS":[8.7,10.7,9.9],"diasD":[13,5.9,3,22.8,2.7,14.8,17.4,6.9,2.9,6.1],"backlog":162,"hasData":true,"metaS":[80,80,80],"metaD":[16,16,16,16,16,16,16,16,16,16],"metaM":[368,336,352,48]},"metaSemanal":80,"atend":{"own":{"convM":[283,382,383,55],"nCsatM":[78,129,155,31],"csatM":[98.7,95.3,95.5,93.5],"tmeM":[1.2333,1.4167,1.2833,1.4667],"tmaM":[3.18667,1.38833,1.4625,1.41972],"convS":[115,84,68],"nCsatS":[48,45,40],"csatS":[95.8,93.3,97.5],"tmeS":[1.2833,1.0667,1.4667],"tmaS":[1.40833,1.755,1.68917],"convD":[22,18,20,20,9,12,18,9,15,13],"nCsatD":[12,13,10,12,7,4,9,8,7,7],"csatD":[91.7,92.3,90,91.7,100,100,100,100,100,71.4],"tmeD":[0.95,1.8333,1.4667,0.8333,4.0833,1.55,3.0833,1.3,1.5667,0.9833],"tmaD":[1.29694,1.98528,0.96528,1.18639,1.70611,2.08556,3.16222,0.60556,0.97472,2.32639]},"team":{"convM":[1270,1257,1208,219],"nCsatM":[355,325,346,66],"csatM":[92.7,94.8,95.4,93.9],"tmeM":[17.45,3.4833,6.1167,4.5333],"tmaM":[5.22333,1.94889,1.72861,1.33333],"convS":[319,287,261],"nCsatS":[83,98,64],"csatS":[97.6,93.9,95.3],"tmeS":[6.6167,9.1167,5.9],"tmaS":[1.23444,1.96472,2.01139],"convD":[63,55,50,71,59,40,53,36,65,63],"nCsatD":[25,25,14,17,8,10,16,13,14,23],"csatD":[96,88,92.9,94.1,87.5,90,100,100,92.9,87],"tmeD":[28.3667,6.9833,5.3,10.1,6.2,4.8333,3.1,3.0833,2.8,7.3333],"tmaD":[1.67,2.04222,1.27472,2.39722,2.03528,1.86,3.32972,0.83722,1.52722,1.66306]},"nome":"Thyfany Correia","labelsD":["23/09","24/09","25/09","28/09","29/09","30/09","01/10","02/10","05/10","06/10"]},"corte":"05/10"};/*__DATA_END__*/</script>
 <script src="https://annitorrecilhas-ship-it.github.io/dash-smb/base.js?v=85bf9cfb10"></script>
-<script src="https://annitorrecilhas-ship-it.github.io/dash-smb/paineis.js?v=3d4fb5cd9a"></script>
+<script src="https://annitorrecilhas-ship-it.github.io/dash-smb/paineis.js?v=953b3a9e0a"></script>
 </body></html>
